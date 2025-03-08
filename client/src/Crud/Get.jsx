@@ -13,8 +13,16 @@ const Get = () => {
             })
 
     }
+
+    const deleteData=(dId)=>{
+        axios.delete(`http://localhost:8000/delete/${dId}`)
+        .then(()=>{
+            getData();
+        })
+    }
+
     useEffect(() => {
-        getData()
+        getData();
 
     }, [])
 
@@ -26,6 +34,7 @@ const Get = () => {
                         {elem.fname}
 
                         {elem.lname}
+                        <button onClick={()=>deleteData(elem._id)}>delete</button>
                         <Link to={`/putdata/${elem._id}`}>Update</Link>
                     </div>
                 )

@@ -7,6 +7,10 @@ import GetUser from './components/GetUser';
 import Get from './Crud/Get';
 import Post from './Crud/Post';
 import Put from './Crud/Put';
+import GetD from './practice/GetD';
+import PostD from './practice/PostD';
+import GetMethod from './sambodhi/GetMethod';
+import Putd from './practice/Putd';
 
 
 
@@ -22,7 +26,12 @@ function App() {
         <Route path='/getdata' element={<Get/>}/>
         <Route path='/postdata' element={<Post/>}/>
         <Route path='/putdata/:userId' element={<Put/>}/>
+        <Route path="Getd" element={<GetD/>}/>
+        <Route path="postd/:" element={<PostD/>}/>
+        <Route path='/Putd/:userId' element={<Putd/>}/>
+       
       </Routes>
+       {/* <GetUser/> */}
     </div>
   );
 }

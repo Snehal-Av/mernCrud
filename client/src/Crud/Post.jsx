@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router';
 
 const Post = () => {
+  const navigate=useNavigate()
   const [postData, setPostData] = useState({
     fname: "",
     lname: "",
@@ -19,12 +21,13 @@ const Post = () => {
     console.log(postData);
   }
 
-  const formSubmit=(e)=>{
+  const formSubmit=async(e)=>{
     e.preventDefault()
-   axios.post('http://localhost:8000/create',postData)
+   await axios.post('http://localhost:8000/create',postData)
    .then((res)=>{
     setPostData(res.data )
     console.log(res.data);
+    navigate("/getdata")
     
    })
   }
