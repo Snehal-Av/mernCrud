@@ -2,9 +2,11 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router';
 
-const Put = () => {
+const UpdateData = () => {
   const { userId } = useParams()
+
   const navigate = useNavigate()
+  
   const [putdata, setputData] = useState({
     fname: "",
     lname: "",
@@ -45,4 +47,4 @@ const Put = () => {
   )
 }
 
-export default Put
+export default UpdateData

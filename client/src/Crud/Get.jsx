@@ -27,7 +27,9 @@ const Get = () => {
     }, [])
 
     return (
-        <div>{
+        <div>
+            <Link to='/postdata'><button>Add User</button></Link>
+            {
             data.map((elem) => {
                 return (
                     <div>
